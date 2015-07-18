@@ -2,10 +2,9 @@
   "name": "Resume",
   "version": "0.0.0",
   "dependencies": {
-    "three.js": "*"
+    "three.js": "*",
+    "requirejs": "*"
   },
   "devDependencies": {},
-  "appPath": "app",
-  "resolutions": {
-  }
+  "appPath": "app"
 }

@@ -1,6 +1,6 @@
 define([
-
-], function ()
+    'threejs'
+], function (threejs)
 {
-
+    console.log(threejs);
 });
