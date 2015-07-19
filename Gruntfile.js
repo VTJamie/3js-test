@@ -39,6 +39,7 @@ module.exports = function(grunt) {
         }
 
         grunt.task.run([
+            'compass',
             'connect:livereload',
             'configureProxies',
             'watch'
@@ -46,6 +47,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('build', [
+       'compass',
        'clean:dist',
        'copy:dist',
        'requirejs'

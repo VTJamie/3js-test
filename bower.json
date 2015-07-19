@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "three.js": "*",
-    "requirejs": "*"
+    "requirejs": "*",
+    "stats.js": "*"
   },
   "devDependencies": {},
   "appPath": "app"

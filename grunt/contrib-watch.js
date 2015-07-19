@@ -1,6 +1,13 @@
 module.exports = function(grunt) {
 
 	grunt.config('watch', {
+	    compass: {
+            files: ['<%= yeoman.app %>/styles/**/*.scss'],
+            tasks: ['compass'],
+            options: {
+                livereload: true
+            }
+    	},
 		gruntfile: {
 			files: ['Gruntfile.js']
 		},

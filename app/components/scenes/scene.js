@@ -2,5 +2,5 @@ define([
     'threejs'
 ], function (threejs)
 {
-    console.log(threejs);
+    return new THREE.Scene();
 });
