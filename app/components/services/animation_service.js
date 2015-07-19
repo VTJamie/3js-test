@@ -13,13 +13,15 @@ define(['stats', 'renderer', 'scene', 'camera'], function (stats, renderer, scen
         };
 
         this.renderListener = function (time) {
-            var idx, currenttimediff = time - that.lasttime;
+            var idx,
+            currenttimediff = time - that.lasttime,
+            ratioofsecond = currenttimediff / 1000.0;
             that.lasttime = time;
 
             requestAnimationFrame(that.renderListener);
 
             for(idx in that.registeredAnimationListeners) {
-                that.registeredAnimationListeners[idx].render(currenttimediff);
+                that.registeredAnimationListeners[idx].render(currenttimediff, ratioofsecond);
             }
 
             renderer.render(scene, camera);
