@@ -4,24 +4,24 @@ define(['stats', 'renderer', 'scene', 'camera'], function (stats, renderer, scen
         this.registeredAnimationListeners = [];
         this.lasttime = 0;
 
-        this.registerForRender = function (listener) {
+        this.registerForUpdate = function (listener) {
             this.registeredAnimationListeners.push(listener);
         };
 
-        this.unregisterFromRender = function (listener) {
+        this.unregisterFromUpdate = function (listener) {
             this.registeredAnimationListeners.remove(listener);
         };
 
         this.renderListener = function (time) {
             var idx,
-            currenttimediff = time - that.lasttime,
-            ratioofsecond = currenttimediff / 1000.0;
+            timedelta = time - that.lasttime,
+            persecondmultiplier = timedelta / 1000.0;
             that.lasttime = time;
 
             requestAnimationFrame(that.renderListener);
 
             for(idx in that.registeredAnimationListeners) {
-                that.registeredAnimationListeners[idx].render(currenttimediff, ratioofsecond);
+                that.registeredAnimationListeners[idx].updateFrame(timedelta, persecondmultiplier);
             }
 
             renderer.render(scene, camera);

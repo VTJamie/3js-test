@@ -4,6 +4,7 @@ require.config({
         //External Libraries
         "threejs": "../libs/three.js/three.min",
         "statsjs": "../libs/stats.js/stats.min",
+        "keycodes": "../libs/keys/index.min",
 
         //Components
         "camera": "cameras/camera",
@@ -14,7 +15,8 @@ require.config({
         "input": "controls/input",
 
         //Actors
-        "monkeyhead": "actors/monkeyhead"
+        "monkeyhead": "actors/monkeyhead",
+        "user": "actors/user"
     },
     shim: {
 

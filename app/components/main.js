@@ -7,7 +7,7 @@ define([
     'input'
 ], function (camera, scene, renderer)
 {
-    require(['monkeyhead'], function (monkeyhead) {
+    require(['monkeyhead', 'user'], function (monkeyhead, user) {
 
     });
 });

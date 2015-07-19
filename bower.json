@@ -4,7 +4,8 @@
   "dependencies": {
     "three.js": "*",
     "requirejs": "*",
-    "stats.js": "*"
+    "stats.js": "*",
+    "keycodes": "*"
   },
   "devDependencies": {},
   "appPath": "app"
