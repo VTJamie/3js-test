@@ -2,7 +2,7 @@ define([
     'threejs'
 ], function (threejs)
 {
-    var renderer = new THREE.WebGLRenderer();
+    var renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setClearColor(0x000000, 1.0);
     renderer.setSize(window.innerWidth, window.innerHeight);
     window.onresize = function () {

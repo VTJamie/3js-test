@@ -5,7 +5,9 @@
     "three.js": "*",
     "requirejs": "*",
     "stats.js": "*",
-    "keycodes": "*"
+    "keycodes": "*",
+    "Physijs": "https://github.com/chandlerprall/Physijs.git",
+    "ammo.js": "https://github.com/kripken/ammo.js.git"
   },
   "devDependencies": {},
   "appPath": "app"

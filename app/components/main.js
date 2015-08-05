@@ -4,10 +4,19 @@ define([
     'renderer',
     'stats',
     'animation_service',
-    'input'
+    'input',
+    'physics'
 ], function (camera, scene, renderer)
 {
-    require(['monkeyhead', 'user'], function (monkeyhead, user) {
+    require([
+            'monkeyhead',
+            'user',
+            'wall1',
+            'wall2',
+            'wall3',
+            'wall4',
+            'floor1',
+            'ambient'], function () {
 
     });
 });

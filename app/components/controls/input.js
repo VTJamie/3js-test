@@ -4,6 +4,16 @@ define(['keycodes'], function (keycodes) {
 
         this.keys = {};
         this.mouse = {};
+        this.mouseMoveListeners = [];
+
+        this.registerForMouseMove = function (listener) {
+            this.mouseMoveListeners.push(listener);
+        };
+
+        this.unregisterForMouseMove = function (listener) {
+            this.mouseMoveListeners.remove(listener);
+        };
+
         document.onkeydown = function (e) {
             that.keys['key' + e.keyCode] = true;
             that.keys[keycodes.getName(e.keyCode)] = true;
@@ -20,6 +30,14 @@ define(['keycodes'], function (keycodes) {
 
         document.onmouseup = function (e) {
             that.mouse.left = false;
+        };
+
+        document.onmousemove = function (e) {
+            var idx, xdelta = e.movementX, ydelta = e.movementY;
+            for(idx in that.mouseMoveListeners) {
+                that.mouseMoveListeners[idx].mouseMoved(xdelta, ydelta);
+            }
+
         };
     }
 

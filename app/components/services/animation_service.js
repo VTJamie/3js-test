@@ -3,6 +3,7 @@ define(['stats', 'renderer', 'scene', 'camera'], function (stats, renderer, scen
           var that = this;
         this.registeredAnimationListeners = [];
         this.lasttime = 0;
+        this.clock = new THREE.Clock();
 
         this.registerForUpdate = function (listener) {
             this.registeredAnimationListeners.push(listener);
@@ -13,18 +14,14 @@ define(['stats', 'renderer', 'scene', 'camera'], function (stats, renderer, scen
         };
 
         this.renderListener = function (time) {
-            var idx,
-            timedelta = time - that.lasttime,
-            persecondmultiplier = timedelta / 1000.0;
-            that.lasttime = time;
-
-            requestAnimationFrame(that.renderListener);
+            var idx;
 
             for(idx in that.registeredAnimationListeners) {
-                that.registeredAnimationListeners[idx].updateFrame(timedelta, persecondmultiplier);
+                that.registeredAnimationListeners[idx].updateFrame(that.clock.getDelta());
             }
 
             renderer.render(scene, camera);
+            requestAnimationFrame(that.renderListener);
             stats.update();
         };
         requestAnimationFrame(this.renderListener);

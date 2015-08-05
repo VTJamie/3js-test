@@ -1,6 +1,9 @@
 define([
-    'threejs'
-], function (threejs)
+    'threejs',
+    'Physijs'
+], function ()
 {
-    return new THREE.Scene();
+    Physijs.scripts.worker = '../libs/Physijs/physijs_worker.js';
+    Physijs.scripts.ammo = '../ammo.js/ammo.js';
+    return new Physijs.Scene();
 });
