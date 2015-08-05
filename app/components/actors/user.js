@@ -21,6 +21,8 @@ define(['animation_service', 'input', 'camera', 'scene', 'threejsfirstpersoncont
         };
 
         animation_service.registerForUpdate(this);
+
+        console.log(scene);
     }
 
     return new User();

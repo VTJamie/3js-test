@@ -4,8 +4,7 @@ define([
     'renderer',
     'stats',
     'animation_service',
-    'input',
-    'physics'
+    'input'
 ], function (camera, scene, renderer)
 {
     require([

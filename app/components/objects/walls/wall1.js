@@ -8,7 +8,12 @@ define(['animation_service', 'scene', 'input', 'constants'], function (animation
 
         loader.load("assets/models/wall1.json", function(model, material) {
 
-            that.mesh = new THREE.Mesh(model, material[0]);
+            that.mesh = new Physijs.BoxMesh(
+                model, Physijs.createMaterial(
+                    material[0],
+                    .8, // high friction
+                    .3 // low restitution
+                ));
 
             that.mesh.scale = new THREE.Vector3();
             that.mesh.scale.x = constants.scale;
